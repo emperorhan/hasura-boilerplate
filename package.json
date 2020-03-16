@@ -1,0 +1,22 @@
+{
+    "name": "hasura-boilerplate",
+    "version": "1.0.0",
+    "description": "Hasura GraphQL Engine is a blazing-fast GraphQL server that gives you instant, realtime GraphQL APIs over Postgres, with webhook triggers on database events, and remote schemas for business logic.",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "UID=$(id -u) docker-compose up -d",
+        "quit": "docker-compose down -v",
+        "console": "hasura console",
+        "migrate:create": "hasura migrate create \"init\" --from-server",
+        "migrate:apply": "hasura migrate apply"
+    },
+    "repository": {
+        "type": "git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "hasura-cli": "^1.1.0"
+    }
+}
