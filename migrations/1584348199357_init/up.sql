@@ -104,9 +104,9 @@ ALTER TABLE ONLY public.user_tasks
     ADD CONSTRAINT "user_tasks_userId_fkey" FOREIGN KEY ("userId") REFERENCES public.users(id) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 -- ENUM data
-INSERT INTO public.enum_history_type (value, comment) VALUES ('CREATION', '생성');
-INSERT INTO public.enum_history_type (value, comment) VALUES ('EDITION', '편집');
-INSERT INTO public.enum_history_type (value, comment) VALUES ('DELETION', '삭제');
-SELECT pg_catalog.setval('public.task_history_id_seq', 1, false);
-SELECT pg_catalog.setval('public.tasks_id_seq', 1, false);
-SELECT pg_catalog.setval('public.users_id_seq', 1, false);
+INSERT INTO public.enum_history_type (type, comment) VALUES ('CREATION', '생성');
+INSERT INTO public.enum_history_type (type, comment) VALUES ('EDITION', '편집');
+INSERT INTO public.enum_history_type (type, comment) VALUES ('DELETION', '삭제');
+INSERT INTO public.enum_user_role (role, comment) VALUES ('USER', '사용자 권한');
+INSERT INTO public.enum_user_role (role, comment) VALUES ('ADMIN', '시스템 관리자 권한');
+INSERT INTO public.enum_user_role (role, comment) VALUES ('ANONYMOUS', '비회원 권한');

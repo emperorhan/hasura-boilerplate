@@ -1,0 +1,10 @@
+- args:
+    cascade: false
+    read_only: false
+    sql: CREATE TABLE "public"."enum_user_roles"("value" text NOT NULL, "comment"
+      text NOT NULL, PRIMARY KEY ("value") , UNIQUE ("value"));
+  type: run_sql
+- args:
+    name: enum_user_roles
+    schema: public
+  type: add_existing_table_or_view

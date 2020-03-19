@@ -1,0 +1,6 @@
+- args:
+    relationship: enum_user_role
+    table:
+      name: user_roles
+      schema: public
+  type: drop_relationship
