@@ -4,6 +4,10 @@
       table:
         name: enum_history_type
         schema: public
+    - is_enum: true
+      table:
+        name: enum_user_role
+        schema: public
     - object_relationships:
       - name: enum_history_type
         using:
@@ -36,6 +40,13 @@
         name: tasks
         schema: public
     - object_relationships:
+      - name: user
+        using:
+          foreign_key_constraint_on: userId
+      table:
+        name: user_roles
+        schema: public
+    - object_relationships:
       - name: task
         using:
           foreign_key_constraint_on: taskId
@@ -46,6 +57,13 @@
         name: user_tasks
         schema: public
     - array_relationships:
+      - name: allowed_roles
+        using:
+          foreign_key_constraint_on:
+            column: userId
+            table:
+              name: user_roles
+              schema: public
       - name: task_histories
         using:
           foreign_key_constraint_on:

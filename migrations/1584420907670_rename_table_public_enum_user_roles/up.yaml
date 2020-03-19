@@ -1,5 +1,0 @@
-- args:
-    cascade: false
-    read_only: false
-    sql: alter table "public"."enum_user_roles" rename to "enum_user_role";
-  type: run_sql
