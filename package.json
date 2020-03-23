@@ -4,7 +4,7 @@
     "description": "Hasura GraphQL Engine is a blazing-fast GraphQL server that gives you instant, realtime GraphQL APIs over Postgres, with webhook triggers on database events, and remote schemas for business logic.",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "export UID=$(id -u) && docker-compose up -d",
+        "start": "UID=$(id -u) docker-compose up -d",
         "quit": "docker-compose down -v",
         "console": "hasura console",
         "migrate:create": "hasura migrate create \"init\" --from-server",
